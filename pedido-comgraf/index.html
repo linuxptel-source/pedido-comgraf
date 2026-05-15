@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pedido Comgraf</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+
+</head>
+
+<body>
+
+<div class="pedido-container">
+
+<div class="topo">
+
+<div class="logo-area">
+
+<img src="logo.png" class="logo">
+
+<div class="empresa-info">
+
+<h2>COM-GRAF</h2>
+
+<p>67 3386-6108 / 99287-2064</p>
+
+<p>Rua Brilhante, 3102</p>
+
+<p>Campo Grande - MS</p>
+
+<p>CNPJ 00.758.020/0001-26</p>
+
+</div>
+
+</div>
+
+<div class="pedido-box">
+
+<h1>PEDIDO</h1>
+
+<div class="numero-pedido" id="numeroPedido">
+PED-000000
+</div>
+
+</div>
+
+</div>
+
+<div class="dados-cliente">
+
+<input type="text" id="cliente" placeholder="Cliente">
+
+<input type="text" id="telefone" placeholder="Telefone">
+
+<input type="text" id="cidade" placeholder="Cidade">
+
+<input type="text" id="endereco" placeholder="Endereço">
+
+<input type="text" id="bairro" placeholder="Bairro">
+
+<input type="text" id="cnpj" placeholder="CNPJ/CPF">
+
+<input type="text" id="contato" placeholder="Contato">
+
+</div>
+
+<div class="pagamento-area">
+
+<label class="check-pagamento">
+<input type="checkbox" id="dinheiro">
+<span></span>
+Dinheiro
+</label>
+
+<label class="check-pagamento">
+<input type="checkbox" id="pix">
+<span></span>
+Pix
+</label>
+
+<label class="check-pagamento">
+<input type="checkbox" id="cartao">
+<span></span>
+Cartão
+</label>
+
+<label class="check-pagamento">
+<input type="checkbox" id="boleto">
+<span></span>
+Boleto
+</label>
+
+<label class="check-pagamento">
+<input type="checkbox" id="cheque">
+<span></span>
+Cheque
+</label>
+
+</div>
+
+<table class="tabela-itens">
+
+<tr>
+
+<th>QUANT.</th>
+<th>DESCRIÇÃO</th>
+<th>UNIT.</th>
+<th>TOTAL</th>
+
+</tr>
+
+<tr>
+
+<td>
+<input type="number" id="qtd1">
+</td>
+
+<td>
+<input type="text" id="item1">
+</td>
+
+<td>
+<input type="number" id="valor1">
+</td>
+
+<td>
+<input type="text" id="total1" readonly>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<input type="number" id="qtd2">
+</td>
+
+<td>
+<input type="text" id="item2">
+</td>
+
+<td>
+<input type="number" id="valor2">
+</td>
+
+<td>
+<input type="text" id="total2" readonly>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<input type="number" id="qtd3">
+</td>
+
+<td>
+<input type="text" id="item3">
+</td>
+
+<td>
+<input type="number" id="valor3">
+</td>
+
+<td>
+<input type="text" id="total3" readonly>
+</td>
+
+</tr>
+
+<tr>
+
+<td>
+<input type="number" id="qtd4">
+</td>
+
+<td>
+<input type="text" id="item4">
+</td>
+
+<td>
+<input type="number" id="valor4">
+</td>
+
+<td>
+<input type="text" id="total4" readonly>
+</td>
+
+</tr>
+
+</table>
+
+<div class="total-area">
+
+<div class="total-label">
+VALOR TOTAL
+</div>
+
+<div class="total-box" id="valorTotal">
+R$ 0,00
+</div>
+
+</div>
+
+<div class="botoes">
+
+<button onclick="salvarPedido()">
+SALVAR PEDIDO
+</button>
+
+<button onclick="gerarPDF()">
+GERAR PDF
+</button>
+
+</div>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+
+</html>
