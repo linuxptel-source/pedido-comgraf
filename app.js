@@ -518,7 +518,7 @@ background:#dbe7ef;
 
 <div class="logo-area">
 
-<img src="logo.png" class="logo">
+<img src="LOGO.png" class="logo">
 
 <div class="empresa-info">
 
