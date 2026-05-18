@@ -508,6 +508,31 @@ background:#dbe7ef;
 
 }
 
+.pix-area{
+
+display:flex;
+justify-content:flex-end;
+align-items:center;
+gap:12px;
+margin-top:16px;
+
+}
+
+.pix-qrcode{
+
+width:85px;
+height:85px;
+
+}
+
+.pix-info{
+
+font-size:9pt;
+line-height:1.4;
+text-align:left;
+
+}
+
 </style>
 
 </head>
@@ -641,6 +666,19 @@ VALOR TOTAL
 
 <div class="total-box">
 ${valorTotal}
+</div>
+
+</div>
+
+<div class="pix-area">
+
+<img src="qrcode.png" class="pix-qrcode">
+
+<div class="pix-info">
+
+<strong>PIX</strong><br>
+CNPJ: 00.758.020/0001-26
+
 </div>
 
 </div>
