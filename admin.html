@@ -1,1 +1,169 @@
+<!DOCTYPE html>
 
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>ADMIN - PEDIDOS</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<style>
+
+body{
+
+font-family:Arial;
+padding:30px;
+background:#f4f4f4;
+
+}
+
+h1{
+
+margin-bottom:20px;
+
+}
+
+input{
+
+padding:10px;
+width:300px;
+font-size:16px;
+margin-bottom:20px;
+
+}
+
+table{
+
+width:100%;
+border-collapse:collapse;
+background:white;
+
+}
+
+th{
+
+background:black;
+color:white;
+padding:12px;
+border:1px solid #ccc;
+
+}
+
+td{
+
+padding:10px;
+border:1px solid #ccc;
+
+}
+
+button{
+
+padding:8px 14px;
+cursor:pointer;
+border:none;
+background:black;
+color:white;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>PAINEL ADMIN</h1>
+
+<input
+type="text"
+id="busca"
+placeholder="Pesquisar cliente..."
+onkeyup="buscarPedidos()"
+>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>NÚMERO</th>
+<th>CLIENTE</th>
+<th>TELEFONE</th>
+<th>TOTAL</th>
+
+</tr>
+
+</thead>
+
+<tbody id="tabelaPedidos">
+
+</tbody>
+
+</table>
+
+<script>
+
+const supabaseUrl =
+'https://qfgwjbbuyvhfybcgjaob.supabase.co';
+
+const supabaseKey =
+'sb_publishable_-7_71TIuTrEfatOjdFBQSw_quupslQE';
+
+const supabaseClient =
+supabase.createClient(supabaseUrl, supabaseKey);
+
+async function buscarPedidos(){
+
+const busca =
+document.getElementById("busca").value;
+
+const { data } = await supabaseClient
+
+.from("pedidos")
+
+.select("*")
+
+.ilike("cliente", `%${busca}%`)
+
+.order("id", { ascending:false });
+
+const tabela =
+document.getElementById("tabelaPedidos");
+
+tabela.innerHTML = "";
+
+data.forEach(pedido => {
+
+tabela.innerHTML += `
+
+<tr>
+
+<td>${pedido.numero}</td>
+
+<td>${pedido.cliente}</td>
+
+<td>${pedido.telefone}</td>
+
+<td>
+R$ ${pedido.total}
+</td>
+
+</tr>
+
+`;
+
+});
+
+}
+
+buscarPedidos();
+
+</script>
+
+</body>
+
+</html>
