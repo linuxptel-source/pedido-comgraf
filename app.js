@@ -140,6 +140,36 @@ document.getElementById("cnpj").value;
 const contato =
 document.getElementById("contato").value;
 
+const dinheiro =
+document.getElementById("dinheiro").checked;
+
+const pix =
+document.getElementById("pix").checked;
+
+const cartao =
+document.getElementById("cartao").checked;
+
+const boleto =
+document.getElementById("boleto").checked;
+
+const cheque =
+document.getElementById("cheque").checked;
+
+const total1 =
+document.getElementById("total1").value;
+
+const total2 =
+document.getElementById("total2").value;
+
+const total3 =
+document.getElementById("total3").value;
+
+const total4 =
+document.getElementById("total4").value;
+
+const dataPedido =
+new Date().toLocaleDateString('pt-BR');
+
 const qtd1 =
 document.getElementById("qtd1").value;
 
@@ -213,7 +243,20 @@ item4,
 qtd4,
 valor4,
 
-total
+total,
+
+total1,
+total2,
+total3,
+total4,
+
+dinheiro,
+pix,
+cartao,
+boleto,
+cheque,
+
+data_pedido: dataPedido
 
 }
 ]);
